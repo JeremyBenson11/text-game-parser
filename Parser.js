@@ -200,8 +200,7 @@ Parser.prototype.parse = function(command) {
                     this.parsedCommand.errorMessages.gramatical = "a grammar problem in comamnd.";
 
                 } else if (/^(?<verb>[^ $]*) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
-                    // testing 'donate 500 gold to the church'
-
+           
                     const matches = /^(?<verb>[^ $]*) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb><directObj>the<preposition>";
                     this.parsedCommand.verb = matches.groups.verb;
