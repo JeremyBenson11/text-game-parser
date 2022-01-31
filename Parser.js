@@ -5,7 +5,8 @@
 // License. 'Creative Commons' User may adapt, sell, provide as is, modify this code, and include in any project (commercial or otherwise.)
 // Feel free to leave Jeremy Benson some credit if used.
 
-// this parser may not be gramatically correct, though it works great.
+// This parser may not be gramatically correct.
+
 function Parser() {
 
     this.parsedCommand = {
