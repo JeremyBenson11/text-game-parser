@@ -5,8 +5,7 @@
 // License. 'Creative Commons' User may adapt, sell, provide as is, modify this code, and include in any project (commercial or otherwise.)
 // Feel free to leave Jeremy Benson some credit if used.
 
-// This parser may not be gramatically correct.
-
+// This parser may not be gramatically correct
 function Parser() {
 
     this.parsedCommand = {
@@ -159,22 +158,19 @@ Parser.prototype.parse = function(command) {
                 //08 'push the car' 'push car'
                 //09 'dance' 'map'
 
-                // BUG: there are not enough optional words. commands must be written in full in top cases. 'yell to the lady about the job' not 'yell to lady about job'
-                // BUG: if cases are treated as having optional words regexes get confused.
 
-                if (/^(?<verb>[^ $]*)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|inside|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.test(command)) {
+                if (/^(?!.*to).*^(?<verb>[^ $]*)( the)? (?<indirectObject>.*?) (on|off|under|over|above|around|inside|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.test(command)) {
 
-                    const matches = /^(?<verb>[^ $]*)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|inside|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.exec(command);
+                    const matches = /^(?!.*foo).*^(?<verb>[^ $]*)( the)? (?<indirectObject>.*?) (on|off|under|over|above|around|inside|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.exec(command);
                     this.parsedCommand.actionType = "<verb><indirectObject><preposition><directObj>";
                     this.parsedCommand.verb = matches.groups.verb;
                     this.parsedCommand.directObject = matches.groups.directObject;
                     this.parsedCommand.indirectObject = matches.groups.indirectObject;
                     this.parsedCommand.preposition = this.prepositionFetch(command, this.commandArray);
-                    //this.parsedCommand.errorMessages.add({"fun error": "This is a test error."});
 
-                } else if (/^(?<verb>[^ $]*)( to)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|inside|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.test(command)) {
+                } else if (/^(?<verb>[^ $]*)( to)( the)? (?<indirectObject>.*?) (on|off|under|over|above|around|inside|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.test(command)) {
 
-                    const matches = /^(?<verb>[^ $]*)( to)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|inside|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.exec(command);
+                    const matches = /^(?<verb>[^ $]*)( to)( the)? (?<indirectObject>.*?) (on|off|under|over|above|around|inside|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.exec(command);
                     this.parsedCommand.actionType = "<verb>to<indirectObj><preposition><directObj>";
 
                     this.parsedCommand.verb = matches.groups.verb;
