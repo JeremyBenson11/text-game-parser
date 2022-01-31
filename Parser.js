@@ -167,7 +167,7 @@ Parser.prototype.parse = function(command) {
                 //06 'dance'
 
                 if (/^(?<verb>[^ $]*)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
-                    alert("1");
+                    
                     const matches = /^(?<verb>[^ $]*)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb><indirectObject><preposition><directObj>";
                     this.parsedCommand.verb = matches.groups.verb;
@@ -177,10 +177,8 @@ Parser.prototype.parse = function(command) {
                     //this.parsedCommand.errorMessages.add({"fun error": "This is a test error."});
 
                 } else if (/^(?<verb>[^ $]*)( to)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
-                    // a little bandaid here. If 'to' second word and match here, run this one.
-                    alert("2");
-
-
+                    
+                    
                     const matches = /^(?<verb>[^ $]*)( to)( the)? (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb>to<indirectObj><preposition><directObj>";
 
@@ -190,7 +188,7 @@ Parser.prototype.parse = function(command) {
                     this.parsedCommand.preposition = this.prepositionFetch(this.parsedCommand.command, this.commandArray);
 
                 } else if (/^(?<verb>[^ $]*) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
-                    alert("3");
+                   
                     const matches = /(?<verb>[^ $]*) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb><preposition><directObj>";
                     this.parsedCommand.verb = matches.groups.verb;
@@ -200,7 +198,6 @@ Parser.prototype.parse = function(command) {
 
                 } else if (/^(?<verb>[^ $]*)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)$/.test(this.parsedCommand.command)) {
 
-                    alert("4");
                     const matches = /(?<verb>[^ $]*)( the)? (?<directObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb><directObj><preposition>";
                     this.parsedCommand.verb = matches.groups.verb;
@@ -222,7 +219,6 @@ Parser.prototype.parse = function(command) {
 
                 } else if (/^(?<verb>[^ $]*)( the)? (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
 
-                    alert("5");
                     const matches = /^(?<verb>[^ $]*)( the)? (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb><directObj>";
                     this.parsedCommand.verb = matches.groups.verb;
@@ -230,7 +226,6 @@ Parser.prototype.parse = function(command) {
 
                 } else if (/^(?<verb>[^ $]*)$/.test(this.parsedCommand.command)) {
 
-                    alert("6");
                     // In this case single word commands may not be verbs, but will be stored in verb.
                     // Ie: 'map' as apposed to 'run'
                     const matches = /(?<verb>[^ $]*)/.exec(this.parsedCommand.command);
