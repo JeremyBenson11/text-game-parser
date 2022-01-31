@@ -1,4 +1,4 @@
-// This parser will return a parsedCommand object filled with usefull sentence parts and information.
+// This parser will return a parsedCommand object filled with useful sentence parts and information.
 // This is a very simple and lightweight parser that would be great for Browser or Electron/Node.js games. Also graphical text games.
 // (opt) means optional word.
 
