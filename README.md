@@ -5,9 +5,6 @@ A very light-weight and simple text game parser for all.
 			// Parser needs a command to work with
 			// set angledCommand with Parser.setAngledCommand(true) if commands are '<get lamp>' as apposed to 'get lamp'
 
-			// let command = "turn the knob on the machine";
-			// let command = "turn the red knob on the blue machine";
-			// let command = "yell to the woman about the job";
 			let command = "";
 
 			Parser = new Parser();
