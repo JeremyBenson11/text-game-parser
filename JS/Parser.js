@@ -59,6 +59,7 @@ Parser.prototype.parse = function(command) {
 
     if (this.parsedCommand.angledCommand == false) {
         // commands are fed in like 'get the lamp'
+		// angledCommand is false
 
         // test for illegal character, if so throw error
         let spChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
