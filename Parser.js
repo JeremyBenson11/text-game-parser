@@ -53,18 +53,9 @@ function Parser() {
 Parser.prototype.parse = function(command) {
 
 
-    command = command.trim();
 
     if (this.parsedCommand.angledCommand == false) {
         // commands are fed in like 'get the lamp'
-
-        // if command empty
-
-        if (command === "") {
-
-            this.parsedCommand.errorMessages.emptyCommand = "command empty.";
-
-        }
 
         // test for illegal character, if so throw error
         let spChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
@@ -116,7 +107,6 @@ Parser.prototype.parse = function(command) {
 
 
             this.parsedCommand.command = command.substring(1, command.length - 1);
-            this.parsedCommand.command = this.parsedCommand.command.trim();
 
             let spChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.\/?]+/;
             if (spChars.test(this.parsedCommand.command)) {
@@ -125,15 +115,9 @@ Parser.prototype.parse = function(command) {
 
             } else {
 
-                if (this.parsedCommand.command === "") {
 
-                    this.parsedCommand.errorMessages.emptyCommand = "command empty.";
+                this.commandArray = this.parsedCommand.command.split(" ");
 
-                } else {
-
-                    this.commandArray = this.parsedCommand.command.split(" ");
-
-                }
             }
 
         }
@@ -166,7 +150,7 @@ Parser.prototype.parse = function(command) {
                 //06 'dance'
 
                 if (/^(?<verb>[^ $]*)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
-                    
+
                     const matches = /^(?<verb>[^ $]*)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb><indirectObject><preposition><directObj>";
                     this.parsedCommand.verb = matches.groups.verb;
@@ -175,8 +159,7 @@ Parser.prototype.parse = function(command) {
                     this.parsedCommand.preposition = this.prepositionFetch(this.parsedCommand.command, this.commandArray);
 
                 } else if (/^(?<verb>[^ $]*)( to)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
-                    
-                    
+
                     const matches = /^(?<verb>[^ $]*)( to)( the)? (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb>to<indirectObj><preposition><directObj>";
 
@@ -186,7 +169,7 @@ Parser.prototype.parse = function(command) {
                     this.parsedCommand.preposition = this.prepositionFetch(this.parsedCommand.command, this.commandArray);
 
                 } else if (/^(?<verb>[^ $]*) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
-                   
+
                     const matches = /(?<verb>[^ $]*) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = "<verb><preposition><directObj>";
                     this.parsedCommand.verb = matches.groups.verb;
@@ -202,10 +185,11 @@ Parser.prototype.parse = function(command) {
                     this.parsedCommand.directObject = matches.groups.directObject;
                     this.parsedCommand.preposition = this.prepositionFetch(this.parsedCommand.command, this.commandArray);
 
+                } else if (/^(?<verb>[^ $]*) the (?<indirectObject>.*?) the (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
+
                     // this will catch a grammar error
                     // if this is not included a regex will get confuse
                     // 'press the red button the machine' will catch here.
-                } else if (/^(?<verb>[^ $]*) the (?<indirectObject>.*?) the (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
 
                     const matches = /^(?<verb>[^ $]*) the (?<indirectObject>.*?) the (?<directObject>.*?)$/.exec(this.parsedCommand.command);
                     this.parsedCommand.actionType = null;
@@ -214,6 +198,16 @@ Parser.prototype.parse = function(command) {
                     this.parsedCommand.directObj = null;
                     this.parsedCommand.error = true;
                     this.parsedCommand.errorMessages.gramatical = "a grammar problem in comamnd.";
+
+                } else if (/^(?<verb>[^ $]*) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
+                    // testing 'donate 500 gold to the church'
+
+                    const matches = /^(?<verb>[^ $]*) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the)? (?<directObject>.*?)$/.exec(this.parsedCommand.command);
+                    this.parsedCommand.actionType = "<verb><directObj>the<preposition>";
+                    this.parsedCommand.verb = matches.groups.verb;
+                    this.parsedCommand.directObject = matches.groups.directObject;
+                    this.parsedCommand.indirectObject = matches.groups.indirectObject;
+                    this.parsedCommand.preposition = this.prepositionFetch(this.parsedCommand.command, this.commandArray);
 
                 } else if (/^(?<verb>[^ $]*)( the)? (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
 
