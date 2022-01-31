@@ -20,7 +20,7 @@ A very light-weight and simple text game parser for all.
 			//"angledCommand" -> true/false
 			//"command" -> The entire command sentence.
 
-			//01 'push the machine of the cliff' 'push machine off cliff'
+			//01 'push the machine off the cliff' 'push machine off cliff'
 		        //02 'yell to the lady about the job' 'yell to the at lady about the awful job'
 			//03 'look in back of the statue'
 			//04 'dance in the rain' 'dance in rain'
