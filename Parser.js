@@ -155,7 +155,6 @@ Parser.prototype.parse = function(command) {
                 //02 <verb> to the(opt) <indirectObj> <preposition> the(opt) <directObj> 
                 //03 <verb> <preposition> the(opt) <directObj> 
                 //04 <verb> the(opt) <directObj> <preposition>
-                // test 
                 //05 <verb> the(opt) <directObj>
                 //06 <verb>
 
