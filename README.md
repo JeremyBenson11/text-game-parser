@@ -44,6 +44,7 @@ A very light-weight and simple text game parser for all.
 
 			// This is where you could have an action class
 			// switch case test for verb, or actionType and handle action.
+			// modify database, ect.
 # update command
 here's an example:
 			
