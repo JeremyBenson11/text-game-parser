@@ -20,19 +20,22 @@ A very light-weight and simple text game parser for all.
 			//"angledCommand" -> true/false
 			//"command" -> The entire command sentence.
 
-			//01 'push the ball under the table', 'ask the woman about the ball'
-			//02 'yell to the woman about the job', even 'yell woman about job'
-			//03 'push over the statue' 'look under the ledge'
-			//04 'twist the cap off' 'jam the door open' 
-			//05 'turn the key'
-			//06 'dance'
+			//01 'push the machine of the cliff' 'push machine off cliff'
+		        //02 'yell to the lady about the job' 'yell to the at lady about the awful job'
+			//03 'look in back of the statue'
+			//04 'dance in the rain' 'dance in rain'
+			//05 'turn the red knob off'
+			//06 'turn the knob the machine' 
+			//07 'push top off statue'
+			//08 'push the car' 'push car'
+			//09 'dance' 'map'
 
 			// possible errors in "errorMessages"
 			// this.parsedCommand.errorMessages.specialCharacter = "command contains illegal character." (thrown when items contain illegal characters.)
 			// this.parsedCommand.errorMessages.openingBracket = "command missing opening bracket"; (angledCommand set to true, missing opening bracket.)
 			// this.parsedCommand.errorMessages.terminatingBracket = "command missing terminating bracket"; (angledCommand set to true, missing terminating bracket.)
 
-			// easily white list characters for commands such as '-' to allow dash in item names.
+			// easily whitelist characters for commands such as '-' to allow dash in item names.
 			// update spChars by removing the allowed character. Be careful with angled brackets.
 
 			let parsedCommand = Parser.parse(command);
