@@ -10,7 +10,7 @@ A very light-weight and simple text game parser for all.
 			Parser = new Parser();
 			Parser.setAngledCommand(false);
 			// parsing a command will return json data
-			// "actionType" -> One of six action types to make action handling easier
+			// "actionType" -> One of eight action types to make action handling easier
 			//"verb" -> The verb being used
 			// "indirectObject" -> The indirect object in the pattern.
 			//"directObject"  -> The direct object in the pattern
