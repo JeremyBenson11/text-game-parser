@@ -148,7 +148,7 @@ Parser.prototype.parse = function(command) {
                 //07 <verb><indirectObj><preposition><directObj>
                 //08 <verb><directObj>
 
-                //01 'push the machine of the cliff' 'push machine off cliff'
+                //01 'push the machine off the cliff' 'push machine off cliff'
                 //02 'yell to the lady about the job' 'yell to the at lady about the awful job'
                 //03 'look in back of the statue'
                 //04 'dance in the rain' 'dance in rain'
