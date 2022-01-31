@@ -50,4 +50,4 @@ here's an example:
 
 # notes
 
-This is a work in progress. There are still minor issues. 
+This is a work in progress. There may be minor issues. Feel free to report any. 
