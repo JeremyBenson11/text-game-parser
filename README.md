@@ -1,6 +1,6 @@
 # text-game-parser
 A very light-weight and simple text game parser for all.
-# usage
+# declarations
 
 			// Parser needs a command to work with
 			// set angledCommand with Parser.setAngledCommand(true) if commands are '<get lamp>' as apposed to 'get lamp'
@@ -40,3 +40,6 @@ A very light-weight and simple text game parser for all.
 
 			// This is where you could have an action class
 			// switch case test for verb, or actionType and handle action.
+# update command
+here's an example:
+			let command = "push the blue button on the red machine";
