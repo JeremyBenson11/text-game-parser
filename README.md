@@ -43,4 +43,4 @@ A very light-weight and simple text game parser for all.
 # update command
 here's an example:
 			
-			//let command = "push the blue button on the red machine";
+			  let command = "push the blue button on the red machine";
