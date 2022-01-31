@@ -173,7 +173,6 @@ Parser.prototype.parse = function(command) {
                     this.parsedCommand.directObject = matches.groups.directObject;
                     this.parsedCommand.indirectObject = matches.groups.indirectObject;
                     this.parsedCommand.preposition = this.prepositionFetch(this.parsedCommand.command, this.commandArray);
-                    //this.parsedCommand.errorMessages.add({"fun error": "This is a test error."});
 
                 } else if (/^(?<verb>[^ $]*)( to)( the) (?<indirectObject>.*?) (on|off|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)( the) (?<directObject>.*?)$/.test(this.parsedCommand.command)) {
                     
