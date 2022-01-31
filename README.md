@@ -34,6 +34,7 @@ A very light-weight and simple text game parser for all.
 			// this.parsedCommand.errorMessages.specialCharacter = "command contains illegal character." (thrown when items contain illegal characters.)
 			// this.parsedCommand.errorMessages.openingBracket = "command missing opening bracket"; (angledCommand set to true, missing opening bracket.)
 			// this.parsedCommand.errorMessages.terminatingBracket = "command missing terminating bracket"; (angledCommand set to true, missing terminating bracket.)
+			// this.parsedCommand.errorMessages.gramatical = "a grammar problem in comamnd."; ('push the button the machine'.)
 
 			// easily whitelist characters for commands such as '-' to allow dash in item names.
 			// update spChars by removing the allowed character. Be careful with angled brackets.
