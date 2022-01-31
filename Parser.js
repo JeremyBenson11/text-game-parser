@@ -136,7 +136,7 @@ Parser.prototype.parse = function(command) {
         switch (this.commandArray[0]) {
 
             default:
-                // prepositions: (on|under|over|above|around|beside|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)
+                // prepositions: (in|on|off|under|over|above|around|beside|behind|down|up|with|across|from|at|to|for|about|open|opened|close|closed|shut)
                 // Prepositions help make regex queries unique, due to placement in sentence. Due to this preposition will not be a named capture group.
 
                 //01 <verb><indirectObject><preposition><directObj>
