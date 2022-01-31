@@ -44,3 +44,7 @@ A very light-weight and simple text game parser for all.
 here's an example:
 			
 			  let command = "push the blue button on the red machine";
+
+# notes
+
+This is a work in progress. There may still be issues.
