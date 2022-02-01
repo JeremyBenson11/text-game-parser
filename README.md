@@ -51,7 +51,7 @@ here's an example:
 			  let command = "push the blue button on the red machine";
 # languages
 
-The JavaScript version seems to be working well enough. Planning to start a C# version soon.
+The JavaScript version needs debugging. If project is completed would be interested in porting to other languages.
 
 # notes
 
