@@ -21,7 +21,7 @@ A very light-weight and simple text game parser for all.
 			//"command" -> The entire command sentence.
 
 			//01 'push the machine off the cliff' 'push machine off cliff'
-		        //02 'yell to the lady about the job' 'yell to the at lady about the awful job'
+		        //02 'yell to the lady about the job' 'yell to the fat lady about the awful job'
 			//03 'look in back of the statue'
 			//04 'dance in the rain' 'dance in rain'
 			//05 'turn the red knob off'
