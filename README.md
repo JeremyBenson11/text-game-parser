@@ -55,4 +55,4 @@ The JavaScript version seems to be working well enough. Planning to start a C# v
 
 # notes
 
-This is a work in progress. There may be minor issues. Feel free to report any. 
+This is a work in progress. There are some issues with error handling.
