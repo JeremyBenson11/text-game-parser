@@ -51,8 +51,8 @@ here's an example:
 			  let command = "push the blue button on the red machine";
 # languages
 
-The JavaScript version needs debugging. If project is completed would be interested in porting to other languages.
+If project is completed would be interested in porting to other languages.
 
 # notes
 
-This is a work in progress. There are some issues with error handling.
+This is a work in progress. There are some issues with error handling. This is most levied to the end user of the class. Check the issues tab for information.
