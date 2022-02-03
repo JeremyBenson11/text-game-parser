@@ -5,7 +5,7 @@ A very light-weight and simple text game parser for all.
 			// Parser needs a command to work with
 			// set angledCommand with Parser.setAngledCommand(true) if commands are '<get lamp>' as apposed to 'get lamp'
 
-			let command = "";
+			let command = "".replace(/\s+/g, ' ').trim();;
 
 			Parser = new Parser();
 			Parser.setAngledCommand(false);
