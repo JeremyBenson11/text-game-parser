@@ -55,4 +55,4 @@ If project is completed would be interested in porting to other languages.
 
 # notes
 
-This is a work in progress. There are some issues with error handling. This is most levied to the end user of the class. Check the issues tab for information.
+This is a work in progress. There are some issues with error handling. The classs leviee most of the error handling to end users. Check the issues tab for information.
