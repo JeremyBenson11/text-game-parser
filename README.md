@@ -52,4 +52,4 @@ here's an example:
 
 # notes
 
-Simple Parser is code designed for hande small-scale projects. It struggles with large-scale tasks that include object names with prepositions, causing confusion and interruptions in the parsing process.
+Simple Parser is code designed to handle small-scale projects. It struggles with large-scale tasks that include object names with prepositions, causing confusion and interruptions in the parsing process.
