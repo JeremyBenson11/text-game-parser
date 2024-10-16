@@ -1,21 +1,21 @@
 # text-game-parser
-A very light-weight and simple text game parser for all.
+A very lightweight and simple text game parser for all.
 # declarations
 
 			// Parser needs a command to work with
-			// set angledCommand with Parser.setAngledCommand(true) if commands are '<get lamp>' as apposed to 'get lamp'
+			// set angledCommand with Parser.setAngledCommand(true) if commands are '<get lamp>' as opposed to 'get lamp'
 
 			let command = "".replace(/\s+/g, ' ').trim();
 
 			Parser = new Parser();
 			Parser.setAngledCommand(false);
-			// parsing a command will return json data
+			// parsing a command will return JSON data
 			// "actionType" -> One of eight action types to make action handling easier
 			//"verb" -> The verb being used
 			// "indirectObject" -> The indirect object in the pattern.
 			//"directObject"  -> The direct object in the pattern
 			//"preposition" -> Any preposition being used in the command
-			//"error" -> true if parsing errors found.
+			//"error" -> true if parsing errors are found.
 			//"errorMessages" -> Json of errors.
 			//"angledCommand" -> true/false
 			//"command" -> The entire command sentence.
@@ -49,10 +49,7 @@ A very light-weight and simple text game parser for all.
 here's an example:
 			
 			  let command = "push the blue button on the red machine";
-# languages
-
-If project is completed would be interested in porting to other languages.
 
 # notes
 
-This is a work in progress. There are some issues with error handling. The classs levies most of the error handling to end users. Check the issues tab for information. Also a full debugging and optimization has not been completed, so check class line by line for now.
+Simple Parser is code designed for hande small-scale projects. It struggles with large-scale tasks that include object names with prepositions, causing confusion and interruptions in the parsing process.
