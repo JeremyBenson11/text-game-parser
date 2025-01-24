@@ -52,4 +52,4 @@ here's an example:
 
 # notes
 
-Simple Parser has a nuanced design that would not allow prepositions in item names. 
+Simple Parser has a nuanced design that would not allow certain prepositions in item names. 
