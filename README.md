@@ -1,5 +1,5 @@
 # text-game-parser
-A very lightweight and simple text game parser for all.
+A very lightweight and simple text game parser for all. Let's talk about why a parser like this would matter. A dictionary over millions of records would take 2 seconds to parse until hardware is upgraded. This parser can parse in seconds for a game scaled to any size.
 # declarations
 
 			// Parser needs a command to work with
@@ -52,4 +52,4 @@ here's an example:
 
 # notes
 
-Simple Parser is code designed to handle small-scale projects. It struggles with large-scale tasks that include object names with prepositions, causing confusion and interruptions in the parsing process.
+Simple Parser has a nuanced design that would not allow prepositions in item names. 
